@@ -198,17 +198,22 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
+  keda:
+    enabled: false
+    # Example for triggers and available parameters
+    # https://keda.sh/docs/2.17/scalers/prometheus/
+    triggers: []
+#      - type: prometheus
+#        metadata:
+#          serverAddress: http://prometheus.monitoring.svc:9090
+#          threshold: '1'
+#          query: query
 
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
-
-volumeMounts: []
-#  - mountPath: /etc/timezone
-#    name: <volumeName>
-#    subPath: ..data/timezone
 
 fileLoad:
   enabled: false
